@@ -9,11 +9,17 @@ require("dotenv").config();
 //     password: process.env.DB_PASSWORD
 // });
 
+const {PGHOST, PGDATABASE,PGUSER,PGPASSWORD} = process.env;
+
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false,
-  },
+  host: PGHOST,
+  database: PGDATABASE,
+  user: PGUSER,
+  password:PGPASSWORD,
+  port: 5432,
+  ssl:{
+    require: true
+  }
 });
 
 module.exports = pool;

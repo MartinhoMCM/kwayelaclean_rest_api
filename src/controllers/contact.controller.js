@@ -33,6 +33,7 @@ exports.create = async (req, res) => {
 };
 
 exports.findAll = async (req, res) => {
+console.log("findall");
 
     try {
 

@@ -24,9 +24,12 @@ async function create(contact) {
 
 async function  findAll() {
 
-    console.log("before ...");
-    
-    const query = `
+console.log("buiding query script ...");
+   const client = await db.connect();
+   result=null;
+
+    try{
+     const query = `
         SELECT
             id,
             full_name,
@@ -35,12 +38,15 @@ async function  findAll() {
         FROM web.contacts
         ORDER BY created_at DESC;
     `;
-
-    console.log("query ", query);
     
-    const result = await db.query(query);
+    result = await db.query(query);
+    } catch(errors){
+        return errors;
+    } finally{
+        client.release();
+    }
 
-    return result.rows;
+return result.rows;
 
     
 }

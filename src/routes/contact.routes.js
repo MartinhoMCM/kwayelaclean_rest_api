@@ -6,8 +6,13 @@ const { body } = require("express-validator");
 const controller = require("../controllers/contact.controller");
 
 // GET
+//router.get("/", controller.findAll);
+
+
+//GETDATA
 router.get("/", controller.findAll);
 
+//POST
 router.post(
     "/",
 
