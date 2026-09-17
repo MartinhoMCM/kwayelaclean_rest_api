@@ -21,8 +21,6 @@ exports.create = async (req, res) => {
 
     } catch (error) {
 
-        console.error(error);
-
         res.status(500).json({
             success: false,
             message: "Internal server error"
@@ -33,7 +31,6 @@ exports.create = async (req, res) => {
 };
 
 exports.findAll = async (req, res) => {
-console.log("findall");
 
     try {
 

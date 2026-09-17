@@ -23,8 +23,6 @@ async function create(contact) {
 }
 
 async function  findAll() {
-
-console.log("buiding query script ...");
    const client = await db.connect();
    result=null;
 
